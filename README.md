@@ -25,11 +25,16 @@ This project provides a set of scripts for demonstrating OS security concepts fo
 
 ```bash
 # Clone the repository
-git clone https://github.com/DuongVu/os-security-demo.git
-cd os-security-demo
+git clone https://github.com/amao4t/OS_Security_Demo_Project.git
+cd OS_Security_Demo_Project
 
 # Make all scripts executable
-chmod +x *.sh
+chmod +x demo.sh user_auth.sh file_permissions.sh firewall_config.sh security_audit.sh
+
+# install sudo required
+sudo apt update
+sudo apt install -y ufw acl
+sudo apt install -y lynis chkrootkit
 ```
 
 ## Usage
@@ -48,6 +53,11 @@ chmod +x *.sh
    ```
 
 ## Notes
+
+1. Always use sudo when running these scripts as they require root privileges
+2. After the demo, use the "Cleanup" option in the main menu to remove all demo users and files
+3. In the User Authentication section, the commands that create users and groups may require logging out and back in to apply some changes
+4. The Firewall Configuration section will change actual firewall settings, so be careful when running in a production environment
 
 - These scripts are designed for educational purposes only
 - Always run security-related commands with caution in production environments
